@@ -1,13 +1,9 @@
 ﻿#!/bin/bash
 #Блокировка сайтов
+ /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s vpnportal.eubank.kz --dport https -j ACCEPT ;
+ /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d vpnportal.eubank.kz --dport https -j ACCEPT ; 
  /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s vpngate.eubank.kz --dport https -j ACCEPT ;
- /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d vpngate.eubank.kz --dport https -j ACCEPT ; 
- /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s eufamily.eub.kz --dport https -j ACCEPT ;
- /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d eufamily.eub.kz --dport https -j ACCEPT ; 
- /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s eustudy.eub.kz --dport https -j ACCEPT ;
- /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d eustudy.eub.kz --dport https -j ACCEPT ; 
- /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s euspace.eub.kz --dport https -j ACCEPT ;
- /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d euspace.eub.kz --dport https -j ACCEPT ; 
+ /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d vpngate.eubank.kz --dport https -j ACCEPT ;
  /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s zakaz.mechta.kz --dport https -j ACCEPT ;
  /usr/bin/sudo iptables -t filter -A OUTPUT -p tcp -d zakaz.mechta.kz --dport https -j ACCEPT ;
  /usr/bin/sudo iptables -t filter -A INPUT -p tcp -s kes.eubank.kz --dport https -j ACCEPT ;
